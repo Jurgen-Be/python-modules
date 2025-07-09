@@ -1,1 +1,12 @@
 # version_manager/pyproject.toml
+
+[project]
+name = "version_manager"
+version = "0.1.0"
+description = "Proffesionele versiebeheer voor python uv-modules"
+authors = [{name = "Jurgen Bergmans"}]
+dependencies = ["bump2version", "toml"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
