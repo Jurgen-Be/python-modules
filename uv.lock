@@ -88,7 +88,7 @@ requires-dist = [
     { name = "bump2version", specifier = ">=1.0.1" },
     { name = "pytest", specifier = ">=8.4.1" },
     { name = "toml", specifier = ">=0.10.2" },
-    { name = "version-manager", path = "version_manager/dist/version_manager-0.2.1-py3-none-any.whl" },
+    { name = "version-manager", url = "https://github.com/Jurgen-Be/python-modules/releases/download/version_manager-v0.2.2/version_manager-0.2.2-py3-none-any.whl" },
 ]
 
 [[package]]
@@ -102,14 +102,14 @@ wheels = [
 
 [[package]]
 name = "version-manager"
-version = "0.2.1"
-source = { path = "version_manager/dist/version_manager-0.2.1-py3-none-any.whl" }
+version = "0.2.2"
+source = { url = "https://github.com/Jurgen-Be/python-modules/releases/download/version_manager-v0.2.2/version_manager-0.2.2-py3-none-any.whl" }
 dependencies = [
     { name = "bump2version" },
     { name = "toml" },
 ]
 wheels = [
-    { filename = "version_manager-0.2.1-py3-none-any.whl", hash = "sha256:e9b7eb12cf521efbf922f22486ce919fc328dd369e52660fc770ea54ed3a7800" },
+    { url = "https://github.com/Jurgen-Be/python-modules/releases/download/version_manager-v0.2.2/version_manager-0.2.2-py3-none-any.whl", hash = "sha256:0978f3b6938315400aabdd15139ea3f9b76444c2b1cbe681efc231a9bffa6e6e" },
 ]
 
 [package.metadata]
