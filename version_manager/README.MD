@@ -1,8 +1,3 @@
-Absoluut, Jurgen — je module verdient een README die niet enkel uitlegt wat ze doet, maar ook laat zien dat ze professioneel in elkaar zit. 📘✨ Hier is een kant-en-klare versie van je `README.md` die je direct in je repo kunt opnemen of aanpassen:
-
----
-
-```markdown
 # 📦 version_manager
 
 Een Python CLI-tool voor het automatisch beheren van semantische versies van modules. Met ondersteuning voor `patch`, `minor` en `major` bumps, synchroniseert `version.py` en `pyproject.toml`, en voorkomt onbedoelde versiewijzigingen via Git-integratie.
