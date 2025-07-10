@@ -17,8 +17,18 @@ class VersionManager:
         return toml.load(self.toml_path)["project"]["version"]
 
     def is_git_dirty(self):
-        result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-        return  any(line.startswitch(" M") or line.startswitch("A ") or line.startswitch("D ") for line in result.stdout.splitlines())
+        git_root = subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"],
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        result = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=git_root,
+            capture_output=True,
+            text=True,
+        )
+        return  any(line.startswith(" M") or line.startswith("A ") or line.startswith("D ") for line in result.stdout.splitlines())
 
     def bump(self, level="patch"):
         current = self.get_current_version()

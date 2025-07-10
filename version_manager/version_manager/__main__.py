@@ -4,7 +4,7 @@ import sys
 import argparse
 
 # Import modules
-from .manager import VersionManager
+from version_manager.manager import VersionManager
 
 def main():
     parser = argparse.ArgumentParser(description='Version Manager CLI')
@@ -40,3 +40,5 @@ def main():
 
         else:
             print("❌ Ongeldige keuze.")
+if __name__ == "__main__":
+    main()
