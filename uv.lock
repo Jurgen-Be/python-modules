@@ -109,7 +109,7 @@ dependencies = [
     { name = "toml" },
 ]
 wheels = [
-    { filename = "version_manager-0.2.1-py3-none-any.whl", hash = "sha256:5a0a84d6f5df1e84ddd8648627f91725b84174666bcd1c03471fd10e9e59faa6" },
+    { filename = "version_manager-0.2.1-py3-none-any.whl", hash = "sha256:522f945136e7889bbde62ea6cc615b1b38e7f460b6af1c14cff018c68067733d" },
 ]
 
 [package.metadata]

@@ -9,7 +9,7 @@ from pathlib import Path
 # Classes met functies
 class VersionManager:
     def __init__(self, module_path="."):
-        self.module_path = Path(module_path).resolve()
+        self.module_path = Path(module_path)
         self.toml_path = self.module_path/"pyproject.toml"
         self.version_py = self.module_path/"version.py"
 
