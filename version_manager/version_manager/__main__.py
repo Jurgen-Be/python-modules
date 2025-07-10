@@ -2,6 +2,7 @@
 """ Cli programma voor de versie manager."""
 import sys
 import argparse
+from pathlib import Path
 
 # Import modules
 from version_manager.manager import VersionManager
@@ -24,19 +25,19 @@ def main():
     else:
         # Interactief keuzemenu als geen CLI level meegegeven werd
         print("\n🔧 Version Manager\n")
-        module = input("Pad naar de modulemap, vb log_module")
+        module_input = input("Pad naar de modulemap, vb log_module").strip()
         print("1. Patch\n2. Minor\n3. Major\n4. Exit")
         choice = input("Maak een keuze (1/2/3/4):").strip()
         levels = {"1": "patch", "2": "minor", "3": "major"}
 
         if choice in levels:
-            module_path = f"python-modules/{module}"
+            module_path = str(Path(module_input).resolve())
             vm = VersionManager(module_path=module_path)
             if vm.is_git_dirty():
                 print("⚠️ Git is niet clean. Eerst committen of auto-commit inschakelen.")
                 return
             vm.bump(levels[choice])
-            print(f"✅ Nieuwe versie in {module}: {vm.get_current_version()}")
+            print(f"✅ Nieuwe versie in {module_input}: {vm.get_current_version()}")
 
         else:
             print("❌ Ongeldige keuze.")
