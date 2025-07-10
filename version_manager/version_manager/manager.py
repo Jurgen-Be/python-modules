@@ -18,7 +18,7 @@ class VersionManager:
 
     def is_git_dirty(self):
         result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-        return  bool(result.stdout.strip())
+        return  any(line.startswitch(" M") or line.startswitch("A ") or line.startswitch("D ") for line in result.stdout.splitlines())
 
     def bump(self, level="patch"):
         current = self.get_current_version()
