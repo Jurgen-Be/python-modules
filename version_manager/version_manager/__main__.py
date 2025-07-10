@@ -18,5 +18,3 @@ def main():
             return
         vm.bump(levels[choice])
         print(f"✅ Nieuwe versie: {vm.get_current_version()}")
-if __name__ == "__main__":
-    main()

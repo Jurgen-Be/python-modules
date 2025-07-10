@@ -10,3 +10,7 @@ Herbruikbare tool voor versiebeheer van uv-modules. Bevat:
 
 ```bash
 pip install ./dist/version_manager-0.1.0-py3-none-any.whl
+
+of
+
+uv add ./dist/version_manager-0.1.0-py3-none-any.whl
