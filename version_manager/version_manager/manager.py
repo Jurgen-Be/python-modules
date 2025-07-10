@@ -12,6 +12,9 @@ class VersionManager:
         self.module_path = Path(module_path)
         self.toml_path = self.module_path/"pyproject.toml"
         self.version_py = self.module_path/"version.py"
+        print(f"[DEBUG] module_path argument: {module_path}")
+        print(f"[DEBUG] resolved module_path: {self.module_path}")
+        print(f"[DEBUG] expected pyproject.toml: {self.toml_path}")
 
 
     def get_current_version(self):
