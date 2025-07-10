@@ -8,8 +8,4 @@ dependencies = [
     "bump2version>=1.0.1",
     "pytest>=8.4.1",
     "toml>=0.10.2",
-    "version-manager",
 ]
-
-[tool.uv.sources]
-version-manager = { path = "version_manager/dist/version_manager-0.2.1-py3-none-any.whl" }
