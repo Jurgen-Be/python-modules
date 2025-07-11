@@ -1,11 +1,13 @@
 # 📦 version_manager – Changelog
 
 Versieoverzicht voor de CLI-tool `version_manager`. Hier worden alle veranderingen per release bijgehouden. Voeg bij nieuwe versies telkens een blok toe bovenaan.
-## v0.2.3.1 – Micro-patch
+
+## v0.2.4 – Exit-fix en stabiliteit
 
 ### 🩹 Fix
 - Exit-optie in CLI-menu (keuze 4) werkt nu correct zonder foutmelding
-- Toegevoegd return/logica in interactieve modus
+- Toegevoegd afsluitlogica (`return` of `sys.exit(0)`) in interactieve flow
+
 
 
 ---
