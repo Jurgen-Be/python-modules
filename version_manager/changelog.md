@@ -2,12 +2,12 @@
 
 Versieoverzicht voor de CLI-tool `version_manager`. Hier worden alle veranderingen per release bijgehouden. Voeg bij nieuwe versies telkens een blok toe bovenaan.
 
-## v0.2.4 – Exit-fix en stabiliteit
+## v0.2.4 – Exit-fix en padvalidatie
 
-### 🩹 Fix
-- Exit-optie in CLI-menu (keuze 4) werkt nu correct zonder foutmelding
-- Toegevoegd afsluitlogica (`return` of `sys.exit(0)`) in interactieve flow
-
+### ✳️ Debug & validatie
+- Extra logging van versiebestandpad in `bump()` toegevoegd
+- Nieuwe helper `write_version_py()` verwerkt correct versienummer
+- Voorkomt mismatch van pad bij bump zonder argumenten
 
 
 ---

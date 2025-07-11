@@ -42,9 +42,10 @@ class VersionManager:
                 "--commit", "--tag",
                 self.toml_path
             ])
-            self.update_version_py()
+            bumped_version = self.get_current_version()
+            self.write_version_py(bumped_version)
+            print(f"[DEBUG] Vresie geschreven naar: {self.version_py}")
 
-    def update_version_py(self):
-        version = self.get_current_version()
+    def write_version_py(self, version):
         with open(self.version_py, "w") as f:
             f.write(f'__version__ = "{version}"\n')
