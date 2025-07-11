@@ -8,10 +8,11 @@ from pathlib import Path
 
 # Classes met functies
 class VersionManager:
-    def __init__(self, module_path="."):
-        self.module_path = Path(module_path)
+    def __init__(self, module_path=".", version_file=None, dry_run=False):
+        self.module_path = Path(module_path).resolve()
         self.toml_path = self.module_path/"pyproject.toml"
-        self.version_py = self.module_path/"version.py"
+        self.version_py = self.module_path/version_file if version_file else self.module_path/"version.py"
+        self.dry_run = dry_run
 
     def get_current_version(self):
         return toml.load(self.toml_path)["project"]["version"]
@@ -32,13 +33,16 @@ class VersionManager:
 
     def bump(self, level="patch"):
         current = self.get_current_version()
-        subprocess.run([
-            "bump2version", level,
-            "--current-version", current,
-            "--commit", "--tag",
-            self.toml_path
-        ])
-        self.update_version_py()
+        if self.dry_run:
+            print(f"[DRY-RUN] Zou bump uitvoeren naar {level} vanaf {current}")
+        else:
+            subprocess.run([
+                "bump2version", level,
+                "--current-version", current,
+                "--commit", "--tag",
+                self.toml_path
+            ])
+            self.update_version_py()
 
     def update_version_py(self):
         version = self.get_current_version()
