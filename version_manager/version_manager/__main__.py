@@ -51,6 +51,10 @@ def main():
             vm.bump(levels[choice])
             print(f"✅ Nieuwe versie in {module_input}: {vm.get_current_version()}")
 
+        elif choice == "4":
+            print("Afsluiten")
+            sys.exit(0)
+
         else:
             print("❌ Ongeldige keuze.")
 

@@ -12,4 +12,4 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-version-manager = { url = "https://github.com/Jurgen-Be/python-modules/releases/download/version_manager-v0.2.2/version_manager-0.2.2-py3-none-any.whl" }
+version-manager = { url = "https://github.com/Jurgen-Be/python-modules/releases/download/version_manager-v0.2.3/version_manager-0.2.3-py3-none-any.whl" }
