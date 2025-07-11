@@ -2,7 +2,7 @@
 
 [project]
 name = "version_manager"
-version = "0.2.3"
+version = "0.2.4"
 description = "Profesionele versiebeheer voor python uv-modules"
 authors = [{name = "Jurgen Bergmans"}]
 dependencies = ["bump2version", "toml"]
